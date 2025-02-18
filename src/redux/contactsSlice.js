@@ -14,10 +14,12 @@ const contactsSlice = createSlice({
     builder
       .addCase(fetchContacts.pending, state => {
         state.status = 'loading';
+        state.error = null;
       })
       .addCase(fetchContacts.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.items = action.payload;
+        state.error = null;
       })
       .addCase(fetchContacts.rejected, (state, action) => {
         state.status = 'failed';
@@ -25,10 +27,12 @@ const contactsSlice = createSlice({
       })
       .addCase(addContact.pending, state => {
         state.status = 'loading';
+        state.error = null;
       })
       .addCase(addContact.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.items.push(action.payload);
+        state.error = null;
       })
       .addCase(addContact.rejected, (state, action) => {
         state.status = 'failed';
@@ -36,12 +40,14 @@ const contactsSlice = createSlice({
       })
       .addCase(deleteContact.pending, state => {
         state.status = 'loading';
+        state.error = null;
       })
       .addCase(deleteContact.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.items = state.items.filter(
           contact => contact.id !== action.payload,
         );
+        state.error = null;
       })
       .addCase(deleteContact.rejected, (state, action) => {
         state.status = 'failed';
