@@ -1,0 +1,39 @@
+body {
+  background-color: var(--background-page-white-color);
+  color: var(--brown-light-text-color);
+  font-family: 'Varta', sans-serif;
+}
+
+ul,
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+:root {
+  --brown-light-text-color: #706458E5;
+  --header-link-color: #706458;
+  --accent-color: #A06056;
+  --background-page-white-color: #ffffff;
+}
